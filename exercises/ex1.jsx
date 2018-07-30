@@ -32,10 +32,10 @@ export default class App extends React.Component {
         const totalCounter = this.state.totalCounter;
         const doubleCounter = this.state.doubleCounter;
         return (
-                <div>
-                    <button onClick={this.increment.bind(this)} onDoubleClick={this.dbClicks.bind(this)}>&nbsp;+&nbsp;</button>
+                <div className="container">
+                    <button onClick={this.increment.bind(this)} onDoubleClick={this.dbClicks.bind(this)}>+</button>
                     <output>{counter}</output>
-                    <button onClick={this.decrement.bind(this)} onDoubleClick={this.dbClicks.bind(this)}>&nbsp;-&nbsp;</button>
+                    <button onClick={this.decrement.bind(this)} onDoubleClick={this.dbClicks.bind(this)}>-</button>
                     <br />
                     <output>Total Click: {totalCounter}</output>
                     <br />
