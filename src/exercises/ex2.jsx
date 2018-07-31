@@ -54,7 +54,7 @@ class ShopList extends React.Component {
     render() {
         return (
             <div className = "shoplist">
-                { this.props.list.map(el => <ShopItemHeader title = {el.title} imageUrl = {el.image} />) }
+                {this.props.list.map(el => <ShopItemHeader title = {el.title} imageUrl = {el.image} />)}
             </div>
         )
     }
