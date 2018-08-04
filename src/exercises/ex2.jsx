@@ -74,8 +74,6 @@ class ShopItem extends React.Component {
 
 export default class App extends React.Component {
     render() {
-        return (
-                <ShopItem shop={shop} />
-        )
+        return <ShopItem shop={shop} />;
     }
 }
