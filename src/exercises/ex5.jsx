@@ -19,7 +19,7 @@ class New extends React.Component {
                 <div>
                     <button onClick={this.handleStartClick}> {this.state.button} </button>
                     <br />
-                    <input onChange={this.onChangeInput} />
+                    <input type="text" placeholder="Type some text" onChange={this.onChangeInput} />
                     <br />
                     <h6> Text from input: {this.state.text} </h6>
                 </div>
