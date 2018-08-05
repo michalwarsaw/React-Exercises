@@ -1,31 +1,69 @@
 import React from 'react';
 
-class Button extends React.Component {
+class LifeCyclesTester extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "Jacek",
-            surmane: "Kowalski"
+            name: "Imie: Michal",
+            surname: "Nazwisko: Wlodarczyk",
+            livingToday: "Warsaw",
+            livingTomorow: "New York"
         }
     }
-render() {
-    return ( 
-            <span>
-             <button> {this.props.name} </button>
-             <button> {this.state.name} </button>
-            </span>
-            )
-    }    
+    componentDidMount() {
+        this.intervalId = setInterval(() => {
+            this.setState({ name: this.state.surname, 
+                            surname: this.state.name, 
+                            livingToday: this.state.livingTomorow 
+                        });
+        }, 1000);
+    }
+    componentWillUnmount() {
+        clearInterval(this.intervalId);
+    }
 
+    render() {
+        return (
+                <div>
+                <h1> {this.state.name} </h1>
+                <h1> {this.state.surname} </h1>
+                <h1> {this.state.livingToday} </h1>
+                </div>
+
+        )
+    }
 }
 
+class TextTyper extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            charIndex: 0,
+            newText: ''
+        };
+    }
+    componentDidMount() {
+        this.typing = setInterval(() => {
+            this.setState({
+                newText: this.state.newText + this.props.text.charAt(this.state.charIndex),
+                charIndex: ++this.state.charIndex
+            });
+        }, 100)
+    }
+    componentWillMount() {
+        clearInterval(this.typing);
+    }
+
+    render() {
+        return <h2>{this.state.newText}</h2>;
+    }
+}
 
 export default class App extends React.Component {
     render() {
         return ( <div>
-                <Button name = "Michal"/>
-                <br />
-                <Button name = "Wlodarczyk" />
+                <LifeCyclesTester />
+                <TextTyper text="React JS, i'm lovin it!"/>
                 </div>
                   )
     }
