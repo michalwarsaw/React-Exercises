@@ -38,20 +38,21 @@ class TextTyper extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            text: "React JS, i'm lovin it!!!",
             charIndex: 0,
             newText: ''
         };
     }
     componentDidMount() {
-        this.typing = setInterval(() => {
+        this.intervalId = setInterval(() => {
             this.setState({
-                newText: this.state.newText + this.props.text.charAt(this.state.charIndex),
-                charIndex: ++this.state.charIndex
+                newText: this.state.newText + this.state.text.charAt(this.state.charIndex), // Pobieram 1 litere
+                charIndex: this.state.charIndex + 1 // pobieram kolejne litery
             });
-        }, 100)
+        }, 100) // wykonuje setInterval co 100ms
     }
     componentWillMount() {
-        clearInterval(this.typing);
+        clearInterval(this.intervalId);
     }
 
     render() {
@@ -63,7 +64,7 @@ export default class App extends React.Component {
     render() {
         return ( <div>
                 <LifeCyclesTester />
-                <TextTyper text="React JS, i'm lovin it!"/>
+                <TextTyper />
                 </div>
                   )
     }
