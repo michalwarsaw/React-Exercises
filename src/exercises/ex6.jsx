@@ -11,9 +11,7 @@ class One extends React.Component {
     // axios
         componentDidMount() {
             axios.get('https://jsonplaceholder.typicode.com/todos/1')
-            .then(response => {
-                console.log(response.data);
-                this.setState({ object: response.data })})
+            .then(response => { this.setState({ object: response.data })})
     }
 // https://jsonplaceholder.typicode.com/posts
     render() {
