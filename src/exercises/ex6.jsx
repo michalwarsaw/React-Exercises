@@ -23,18 +23,22 @@ class Two extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            array: []
+            object: {}
         }
    
     }
         componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/posts/1/comments')
+        fetch('https://jsonplaceholder.typicode.com/todos/1')
         .then(response => response.json())
-        .then(json => this.setState({array: json}))
+        .then(json => this.setState({object: json}));
     }
 
     render() {
-        return <h3> {console.log(this.state.array[0])} </h3>
+        return (
+                <div> 
+                    <h3> {this.state.object.title} </h3> 
+                </div>
+        )
     }
 }
 
