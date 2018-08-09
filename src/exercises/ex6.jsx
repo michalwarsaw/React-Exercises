@@ -4,18 +4,18 @@ class New extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: ""
+            array: []
         }
    
     }
-    componentDidMount() {
-        fetch('http://api.tvmedia.ca/tv/v4/')
+        componentDidMount() {
+        fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
-        .then(json => this.setState({text: json}))
+        .then(json => this.setState({array: json}))
     }
 
     render() {
-        return <h3> {this.state.text} </h3>
+        return <h3> {this.state.array.length} </h3>
     }
 }
 
