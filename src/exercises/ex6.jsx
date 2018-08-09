@@ -1,21 +1,27 @@
 import React from 'react';
-
+import axios from 'axios';
 class One extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            array: []
+            object: {}
         }
    
     }
+    // axios
         componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(response => response.json())
-        .then(json => this.setState({array: json}))
+            axios.get('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => {
+                console.log(response.data);
+                this.setState({ object: response.data })})
     }
-
+// https://jsonplaceholder.typicode.com/posts
     render() {
-        return <h3> {this.state.array.length} </h3>
+        return (
+                <div> 
+                    <h3> {this.state.object.title} </h3> 
+                </div>
+        )
     }
 }
 
@@ -27,6 +33,7 @@ class Two extends React.Component {
         }
    
     }
+    // fetch
         componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/todos/1')
         .then(response => response.json())
