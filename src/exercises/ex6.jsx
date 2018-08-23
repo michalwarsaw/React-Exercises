@@ -26,7 +26,7 @@ class Two extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            object: {}
+            object: []
         }
    
     }

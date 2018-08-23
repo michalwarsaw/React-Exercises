@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './exercises/ex6.jsx';
+import App from './exercises/ex7.jsx';
 import './scss/style.scss';
 import 'whatwg-fetch';
 
