@@ -2,12 +2,12 @@
 
 ## Exercises
 
-- 1 - Simple counter
-- 2 - A very simple webpage based on React Component structure
-- 3 - A simple sketch how to use props
+- 1 - Simple counter.
+- 2 - A very simple webpage based on React Component structure.
+- 3 - A simple sketch how to use props.
 - 4 - Playing with setState, setInterval, time interval, life cycle component.
 - 5 - Playing with events.
-- 6 - Simple sketch to how use fetch and axios.
+- 6 - Simple sketch how to use fetch and axios.
 - 7 - 
 
 ## Install
