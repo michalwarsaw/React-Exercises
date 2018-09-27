@@ -19,6 +19,7 @@ For running this on your local machine:
 ```bash
 npm install
 ```
+- To use each exercises, chose a nr editing index.jsx from src.
 
 ## Author
 
